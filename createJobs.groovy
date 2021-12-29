@@ -12,7 +12,7 @@ pipelineJob('theme-park-job') {
             scm {
                 git {
                     remote {
-                        url 'https://github.com/daviddela12/ThemeParkRides.git'
+                        url 'https://github.com/daviddela12/theme-park-rides.git'
                     }
                     branch 'master'
                 }
