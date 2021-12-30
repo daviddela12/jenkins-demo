@@ -27,7 +27,9 @@ if (DefaultNativePlatform.getCurrentOperatingSystem().isWindows() || DefaultNati
 def out = new ByteArrayOutputStream()
 process.waitForProcessOutput(out, System.err)
 String dockerSockGroupId = out.toString().trim()
-dockerSockGroupId = "root"
+if (DefaultNativePlatform.getCurrentOperatingSystem().isMacOsX()) {
+    dockerSockGroupId = "root"
+}
 String extraPrefix = (DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) ? '/' : ''
 dockerRun {
     name "${project.name}"
